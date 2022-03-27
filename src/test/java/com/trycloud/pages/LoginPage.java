@@ -20,4 +20,8 @@ public class LoginPage {
 
     @FindBy(xpath = "//input[@id='submit-form']")
     public WebElement loginBttn;
+
+    @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
+    public  WebElement errorMessage;
+
 }
