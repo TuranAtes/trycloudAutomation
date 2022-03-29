@@ -1,5 +1,6 @@
 package com.trycloud.pages;
 
+import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,5 +24,11 @@ public class LoginPage {
 
     @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
     public  WebElement errorMessage;
+
+    public void login(){
+        usernameBox.sendKeys(ConfigurationReader.getProperty("username"));
+        passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+        loginBttn.click();
+    }
 
 }
