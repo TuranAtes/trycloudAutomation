@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.net.URL;
+
 public class LoginPage {
 
 
@@ -26,6 +28,7 @@ public class LoginPage {
     public  WebElement errorMessage;
 
     public void login(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("URL"));
         usernameBox.sendKeys(ConfigurationReader.getProperty("username"));
         passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
         loginBttn.click();
