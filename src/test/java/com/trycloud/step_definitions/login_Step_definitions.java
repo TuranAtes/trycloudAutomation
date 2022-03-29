@@ -27,13 +27,8 @@ public class login_Step_definitions {
 
         @When("user use username {string} and passcode {string}")
         public void userUseUsernameAndPasscode(String arg0, String arg1) {
-
-
-  loginPage.usernameBox.sendKeys(arg0);
-
-  loginPage.passwordBox.sendKeys(arg1);
-
-
+          loginPage.usernameBox.sendKeys(arg0);
+          loginPage.passwordBox.sendKeys(arg1);
     }
     @When("user click the login button")
     public void user_click_the_login_button() {
