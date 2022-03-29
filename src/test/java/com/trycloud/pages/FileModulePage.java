@@ -10,7 +10,6 @@ import java.util.List;
 public class FileModulePage {
 
     public FileModulePage(){
-
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -23,5 +22,18 @@ public class FileModulePage {
     @FindBy(xpath = "//*[@id=\"select-files-18353\"]")
     public WebElement readMeCheckbox;
 
-    //  @FindBy (xpath = "select-files-17245)
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[3]")
+    public WebElement actionBtn;
+
+    @FindBy(xpath = "//a[@class='menuitem action action-favorite permanent']")
+    public WebElement addToFav;
+
+    @FindBy(xpath = "//a[@class='nav-icon-favorites svg']")
+    public WebElement favorite;
+
+    @FindBy(xpath = "(//span[.='Talk'])[6]")
+    public WebElement talkFileIsDisplayed;
+
+
 }
