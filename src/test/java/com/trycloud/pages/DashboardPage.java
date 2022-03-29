@@ -9,16 +9,15 @@ import java.util.List;
 
 public class DashboardPage {
     public DashboardPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
 
-    public void subTabs(String subName){
-        String AllSubTubs = "//li[@class='in-header']//a//span[.='"+subName+"'] ";
+            PageFactory.initElements(Driver.getDriver(),this);
+        }
 
-
-    }
-@FindBy(xpath = "//li[@data-id='']")
-    public List<WebElement> allTabs;
+        public void subTabs(String subName){
+            String AllSubTubs = "//li[@class='in-header']//a//span[.='"+subName+"'] ";
+        }
+        @FindBy(xpath = "//li[@class='in-header']//a")
+        public List<WebElement> allTabs;
 
 
 

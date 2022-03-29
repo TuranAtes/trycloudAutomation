@@ -7,22 +7,19 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class US3_step_definition {
     DashboardPage dashboardPage = new DashboardPage();
-    LoginPage loginPage = new LoginPage();
-
-
-
 
     @Then("Verify the user see the following modules:")
     public void verify_the_user_see_the_following_modules(List<String> expectedtext) {
-        loginPage.loginBttn.click();
-        BrowserUtils.waitFor(3);
-
-        List<String> actualText = BrowserUtils.getElementsText(dashboardPage.allTabs);
-        Assert.assertEquals(expectedtext,actualText);
-
+        List<String> actualtext=new ArrayList<>();
+        for (int i = 0; i < dashboardPage.allTabs.size(); i++) {
+            String expextedEachText = dashboardPage.allTabs.get(i).getAttribute("aria-label");
+            actualtext.add(expextedEachText);
+        }
+        Assert.assertEquals(expectedtext,actualtext);
     }
-}
+    }
