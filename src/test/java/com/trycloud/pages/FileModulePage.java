@@ -35,5 +35,16 @@ public class FileModulePage {
     @FindBy(xpath = "(//span[.='Talk'])[6]")
     public WebElement talkFileIsDisplayed;
 
+    @FindBy(xpath = "//span[.='Remove from favorites']")
+    public WebElement removeFromFavorites;
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
+    public WebElement actionIndex_1;
+
+    @FindBy (xpath = "(//span[.='Bachelor of Criminology'])[5]")
+    public WebElement removeVerify;
+
+
+
 
 }
