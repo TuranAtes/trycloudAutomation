@@ -9,11 +9,6 @@ import org.junit.Assert;
 
 public class US7_Step_definitions {
     FileModulePage fileModulePage = new FileModulePage();
-    @When("the user clicks the add icon on the top")
-    public void the_user_clicks_the_add_icon_on_the_top() {
-        BrowserUtils.waitForClickablility(fileModulePage.addIcon,5);
-        fileModulePage.addIcon.click();
-    }
 
     @When("user click {string}")
     public void user_click(String string) {
