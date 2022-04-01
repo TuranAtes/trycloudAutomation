@@ -35,5 +35,36 @@ public class FileModulePage {
     @FindBy(xpath = "(//span[.='Talk'])[6]")
     public WebElement talkFileIsDisplayed;
 
+    @FindBy(xpath = "//span[.='Remove from favorites']")
+    public WebElement removeFromFavorites;
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
+    public WebElement actionIndex_1;
+
+    @FindBy (xpath = "(//span[.='Bachelor of Criminology'])[5]")
+    public WebElement removeVerify;
+
+    @FindBy (xpath = "//a[@class='button new']")
+    public WebElement addButtonIcon;
+
+    @FindBy(xpath = "//input[@id='file_upload_start']")
+    public WebElement uploadFileBtn;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]//span[.='HELLOWORLD']")
+    public WebElement uploadedFileLocation;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]//span[.='HOME']/../following-sibling::span//span[@class='icon icon-more']/..")
+    public WebElement chosenUploadedFile3dots;
+
+    @FindBy(xpath = "//span[.='Delete file']")
+    public WebElement deleteFileBtn;
+
+
+
+
+
+
+
+
 
 }
