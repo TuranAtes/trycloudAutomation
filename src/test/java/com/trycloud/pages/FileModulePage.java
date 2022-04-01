@@ -44,6 +44,26 @@ public class FileModulePage {
     @FindBy (xpath = "(//span[.='Bachelor of Criminology'])[5]")
     public WebElement removeVerify;
 
+    @FindBy (xpath = "//a[@class='button new']")
+    public WebElement addButtonIcon;
+
+    @FindBy(xpath = "//input[@id='file_upload_start']")
+    public WebElement uploadFileBtn;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]//span[.='HELLOWORLD']")
+    public WebElement uploadedFileLocation;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]//span[.='HOME']/../following-sibling::span//span[@class='icon icon-more']/..")
+    public WebElement chosenUploadedFile3dots;
+
+    @FindBy(xpath = "//span[.='Delete file']")
+    public WebElement deleteFileBtn;
+
+
+
+
+
+
 
 
 
