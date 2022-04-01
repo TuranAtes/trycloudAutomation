@@ -28,7 +28,7 @@ public class US5_Step_Definitions {
 
     @Then("Verify the chosen file is listed on the table")
     public void verify_the_chosen_file_is_listed_on_the_table() {
-        Assert.assertTrue(fileModulePage.talkFileIsDisplayed.isDisplayed());
+        Assert.assertTrue("", fileModulePage.talkFileIsDisplayed.isDisplayed());
     }
 
 

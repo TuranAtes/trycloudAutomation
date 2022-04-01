@@ -1,6 +1,6 @@
-
+@us7
 Feature: As a user, I should be able to remove files from the favorites and upload a file directly
-  @us7
+
   Scenario: Verify users can add the folder
     Given user on the dashboard page
     When the user clicks the "Files" module

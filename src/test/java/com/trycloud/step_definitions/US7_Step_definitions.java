@@ -19,9 +19,9 @@ public class US7_Step_definitions {
 
     @When("user write a folder name")
     public void user_write_a_folder_name() {
-        BrowserUtils.sleep(5);
+
         fileModulePage.newFolderInputBox.sendKeys("HulyaFileAdded");
-        BrowserUtils.sleep(5);
+
         }
 
     @When("the user click submit icon")
