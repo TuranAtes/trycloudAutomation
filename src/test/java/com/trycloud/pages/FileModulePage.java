@@ -85,6 +85,32 @@ public class FileModulePage {
 
 
 
+    @FindBy(xpath = "//tr//span[@class='innernametext']/..")
+    public List<WebElement> AllDeletedFolderElement;
+
+    @FindBy(xpath = "//tr[1]//span[@class='innernametext']")
+    public WebElement locationofthreedat;
+
+
+    @FindBy(xpath = "//a[.='Deleted files']")
+    public WebElement deletedmodule;
+    @FindBy(xpath = "//span[.='Delete folder']")
+    public WebElement deletedddfolder;
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
+    public WebElement actionbutton1;
+
+    @FindBy(xpath = " //span[.=' Restore']/..")
+    public List<WebElement> restoreButton;
+
+
+
+
+
+
+
+
+
 
 
 

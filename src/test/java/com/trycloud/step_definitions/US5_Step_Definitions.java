@@ -12,6 +12,7 @@ public class US5_Step_Definitions {
 
     @When("the user clicks action-icon from any file on the page")
     public void the_user_clicks_action_icon_from_any_file_on_the_page() {
+        BrowserUtils.waitForClickablility(fileModulePage.actionBtn,5);
         fileModulePage.actionBtn.click();
     }
 
