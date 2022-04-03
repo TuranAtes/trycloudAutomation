@@ -16,18 +16,21 @@ public class TalkModulePage {
     public WebElement talkModuleSerachbox;
 
 
-    @FindBy(xpath = "//span[.='User71']")
+    @FindBy(xpath = "//ul[@class='conversations']//a[@aria-label='Conversation, User71']")
     public WebElement user71;
 
 
     @FindBy(xpath = "//div[@placeholder='Write message, @ to mention someone …']")
     public WebElement messageBox;
 
-    @FindBy(xpath = "//button[@class='new-message-form__button submit icon-confirm-fade']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement messageSubmitButton;
 
     @FindBy(xpath = "//div[starts-with(@id,\"message\") and @class='message']//div[@class='rich-text--wrapper']")
     public List<WebElement> listOfMessages;
+
+    @FindBy(xpath="//a[@aria-label='Talk'][1]")
+    public WebElement talkmodule;
 }
 
 

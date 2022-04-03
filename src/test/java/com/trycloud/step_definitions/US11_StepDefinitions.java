@@ -3,6 +3,7 @@ package com.trycloud.step_definitions;
 import com.trycloud.pages.DashboardPage;
 import com.trycloud.pages.TalkModulePage;
 import com.trycloud.utilities.BrowserUtils;
+import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -13,15 +14,17 @@ public class US11_StepDefinitions {
 
     @Then("verify the page title is {string}")
     public void verify_the_page_title_is(String string) {
-Assert.assertTrue(dashboardPage.dashboardPageTitle().equals(string));
+     Assert.assertTrue(Driver.getDriver().getTitle().contains(string));
 
     }
 
     @When("user search user from the search box")
     public void user_search_user_from_the_search_box() {
+        talkModulePage.talkModuleSerachbox.click();
         talkModulePage.talkModuleSerachbox.sendKeys("User71");
         BrowserUtils.waitForClickablility( talkModulePage.user71,5);
         talkModulePage.user71.click();
+
 
 
 
@@ -33,6 +36,7 @@ Assert.assertTrue(dashboardPage.dashboardPageTitle().equals(string));
     public void user_write_a_message() {
         BrowserUtils.waitForClickablility(talkModulePage.messageBox,5);
         talkModulePage.messageBox.sendKeys("Anastasia");
+        BrowserUtils.waitForClickablility(talkModulePage.messageSubmitButton,5);
 
     }
     @When("user clicks to submit button")
@@ -50,4 +54,8 @@ Assert.assertTrue(dashboardPage.dashboardPageTitle().equals(string));
 
     }
 
+    @When("the user clicks the Talk module")
+    public void theUserClicksTheTalkModule() {
+        talkModulePage.talkmodule.click();
+    }
 }
