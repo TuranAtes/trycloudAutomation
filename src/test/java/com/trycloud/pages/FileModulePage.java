@@ -84,6 +84,23 @@ public class FileModulePage {
     public WebElement deleteFolderBtn;
 
 
+    @FindBy(xpath = "//a[@class='menuitem action action-details permanent']")
+    public WebElement detailsBttn;
+
+    @FindBy(xpath = "//a[@id='commentsTabView']")
+    public WebElement commentBttn;
+
+    @FindBy(xpath = "//div[@class='message']")
+    public WebElement commentBox;
+
+    @FindBy(xpath = "(//input[@type='submit'])[2]")
+    public WebElement commentBoxSubmit;
+
+
+    @FindBy(xpath = "(//div[@class='message'])[2]")
+    public WebElement commentVerify;
+
+
 
 
 
