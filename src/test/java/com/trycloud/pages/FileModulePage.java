@@ -100,8 +100,27 @@ public class FileModulePage {
     @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
     public WebElement actionbutton1;
 
-    @FindBy(xpath = " //span[.=' Restore']/..")
+    @FindBy(xpath = "(//span[.=' Restore']/..)[204]")
     public List<WebElement> restoreButton;
+
+    @FindBy(xpath = "(//span[.='JamesBond'])[4]")
+    public List<WebElement> jamesbond;
+
+
+    @FindBy(xpath = "(//span[.='Master of Engineering'])[2]")
+    public WebElement Masterofengineer;
+
+
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
+    public WebElement actionmy;
+
+
+
+
+
+
+
 
 
 
