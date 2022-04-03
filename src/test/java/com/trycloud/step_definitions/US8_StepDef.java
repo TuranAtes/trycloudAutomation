@@ -14,23 +14,25 @@ public class US8_StepDef {
     FileModulePage filesPage = new FileModulePage();
     String beforeDeleteFolderText;
 
-    @And("user choose the {string} option")
-    public void userChooseTheOption(String str) {
+    @When("the user clicks action-icon  from any file on the pagem")
+    public void the_user_clicks_action_icon_from_any_file_on_the_pagem() {
+        BrowserUtils.waitForClickablility(filesPage.mertfirst3dots,5);
+        filesPage.mertfirst3dots.click();
+    }
+    @When("user choose the {string} optionm")
+    public void user_choose_the_optionm(String str) {
         beforeDeleteFolderText=filesPage.mertchosenFolderForDelete.getText();
         filesPage.mertactionIconSubOptionsNavigate(str);
-//        BrowserUtils.waitForClickablility(filesPage.deleteFolderBtn,5);
-//        BrowserUtils.highlight(filesPage.deleteFolderBtn);
-//        BrowserUtils.clickWithTimeOut(filesPage.deleteFolderBtn,5);
     }
-
-    @When("the user clicks the {string} sub-module")
-    public void the_user_clicks_the_sub_module(String string) {
+    @When("the user clicks the {string} sub-modulem")
+    public void the_user_clicks_the_sub_modulem(String string) {
         BrowserUtils.waitForClickablility(filesPage.mertdeletedFilesModule,5);
         filesPage.mertdeletedFilesModule.click();
         BrowserUtils.waitForPageToLoad(5);
+
     }
-    @Then("Verify the deleted file is displayed on the page.")
-    public void verify_the_deleted_file_is_displayed_on_the_page() {
+    @Then("Verify the deleted file is displayed on the page.m")
+    public void verify_the_deleted_file_is_displayed_on_the_page_m() {
         BrowserUtils.scrollToElement(filesPage.mertdeletedFilesFoldersList.get(filesPage.mertdeletedFilesFoldersList.size()-1));
         BrowserUtils.sleep(10);
         String afterDeleteFolderMovesToDeletedFilesText=filesPage.mertdeletedFilesFoldersList.get(filesPage.mertdeletedFilesFoldersList.size()-1).getText();

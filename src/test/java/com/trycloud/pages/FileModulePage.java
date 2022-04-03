@@ -137,6 +137,9 @@ public class FileModulePage {
     public List<WebElement> mertrestoreBtn;
 
 
+    @FindBy(xpath = "//a[@data-action='menu']//span/..")
+    public WebElement mertfirst3dots;
+
 
 
 
