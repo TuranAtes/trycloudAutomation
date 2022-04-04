@@ -19,12 +19,13 @@ public class DashboardPage {
         @FindBy(xpath = "//li[@class='in-header']//a")
         public List<WebElement> allTabs;
 
-    @FindBy (xpath = "//*[@id=\"appmenu\"]/li[2]")
-    public WebElement fileModule;
+        @FindBy (xpath = "//*[@id=\"appmenu\"]/li[2]")
+        public WebElement fileModule;
 
-    public String dashboardPageTitle(){
-        return Driver.getDriver().getTitle();
-    }
+        public String dashboardPageTitle(){
+            return Driver.getDriver().getTitle();
+        }
+
 
 
 }
