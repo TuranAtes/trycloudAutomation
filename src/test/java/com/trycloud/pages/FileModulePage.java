@@ -179,8 +179,8 @@ public class FileModulePage {
     @FindBy(xpath ="//button[.='Continue']")
     public WebElement conflictBtn;
 
-
-
+    @FindBy(css ="#initial-state-core-capabilities")
+    public WebElement notEnoughSpacePopup;
 
 
 

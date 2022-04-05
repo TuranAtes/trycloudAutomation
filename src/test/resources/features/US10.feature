@@ -3,7 +3,7 @@ Feature: As a user, I should be able to update settings.
 Background:
   Given user on the dashboard page
   And the user clicks the "Files" module
-  @ira
+
 Scenario: Verify users update settings
 
 When user clicks Settings on the left bottom corner

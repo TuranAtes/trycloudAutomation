@@ -14,13 +14,15 @@ import io.cucumber.java.en.When;
 import io.cucumber.messages.types.Background;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
 public class US10_StepDefinitions {
     FileModulePage fileModulePage = new FileModulePage();
-    int beforeStorage;
+    Double beforeStorage;
 
     @When("user clicks Settings on the left bottom corner")
     public void user_clicks_settings_on_the_left_bottom_corner() {
@@ -48,7 +50,7 @@ public class US10_StepDefinitions {
         @When("user checks the current storage usage")
         public void user_checks_the_current_storage_usage () {
            String storageBeforeUploading= fileModulePage.storageUsage.getText();
-           beforeStorage = Integer.parseInt(storageBeforeUploading.substring(0,storageBeforeUploading.indexOf(' ')));
+           beforeStorage = Double.valueOf(storageBeforeUploading.substring(0,storageBeforeUploading.indexOf(' ')));
            System.out.println("beforeStorage = " + beforeStorage);
         }
 
@@ -56,7 +58,7 @@ public class US10_StepDefinitions {
         public void users_uploads_file_with_the_upload_file_option() {
             String path = System.getProperty("user.dir") + "/src/test/resources/files/HELLOWORLD.jpg";
             BrowserUtils.highlight(fileModulePage.uploadFileBtn);
-            fileModulePage.uploadFileBtn.sendKeys(path);
+            fileModulePage.uploadFileBtn.sendKeys(path );
             BrowserUtils.waitForPageToLoad(5);
             fileModulePage.addButtonIcon.click();
 
@@ -64,23 +66,30 @@ public class US10_StepDefinitions {
 
         @When("user refresh the page")
         public void user_refresh_the_page ()  {
-        if (fileModulePage.conflictWarning.isDisplayed()){
+
+            try {
+                fileModulePage.conflictWarning.isDisplayed();
+            } catch (NoSuchElementException e) {
+                System.out.println("No duplicated file");
+
+            }
+
             for (WebElement checkbox : fileModulePage.conflictCheckboxes) {
                 checkbox.click();
                 BrowserUtils.sleep(2);
             }
             BrowserUtils.sleep(2);
             fileModulePage.conflictBtn.click();
-        }
             BrowserUtils.sleep(2);
-        Driver.getDriver().navigate().refresh();
-            BrowserUtils.sleep(2);
+
         }
         @Then("the user should be able to see storage usage is increased")
         public void the_user_should_be_able_to_see_storage_usage_is_increased () {
+            Driver.getDriver().navigate().refresh();
+            BrowserUtils.sleep(2);
 
             String storageAfterUploading= fileModulePage.storageUsage.getText();
-            int afterStorage = Integer.parseInt(storageAfterUploading.substring(0,storageAfterUploading.indexOf(' ')));
+            Double afterStorage = Double.valueOf(storageAfterUploading.substring(0,storageAfterUploading.indexOf(' ')));
             System.out.println("afterStorage = " + afterStorage);
 
            Assert.assertTrue(beforeStorage<afterStorage);
@@ -88,5 +97,3 @@ public class US10_StepDefinitions {
     }
 
 
-//String path = System.getProperty("user.dir")+"/src/test/resources/files/HOME.jpg";
-       // filesPage.uploadFileBtn.sendKeys(path);
