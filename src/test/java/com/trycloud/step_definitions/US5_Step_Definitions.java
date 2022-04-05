@@ -12,6 +12,7 @@ public class US5_Step_Definitions {
 
     @When("the user clicks action-icon from any file on the page")
     public void the_user_clicks_action_icon_from_any_file_on_the_page() {
+        BrowserUtils.waitForClickablility(fileModulePage.actionBtn,5);
         fileModulePage.actionBtn.click();
     }
 
@@ -28,7 +29,7 @@ public class US5_Step_Definitions {
 
     @Then("Verify the chosen file is listed on the table")
     public void verify_the_chosen_file_is_listed_on_the_table() {
-        Assert.assertTrue(fileModulePage.talkFileIsDisplayed.isDisplayed());
+        Assert.assertTrue("", fileModulePage.talkFileIsDisplayed.isDisplayed());
     }
 
 
