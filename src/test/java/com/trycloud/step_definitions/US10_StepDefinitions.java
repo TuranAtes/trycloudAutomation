@@ -61,27 +61,26 @@ public class US10_StepDefinitions {
             fileModulePage.uploadFileBtn.sendKeys(path );
             BrowserUtils.waitForPageToLoad(5);
             fileModulePage.addButtonIcon.click();
-
         }
 
         @When("user refresh the page")
         public void user_refresh_the_page ()  {
 
-            try {
-                fileModulePage.conflictWarning.isDisplayed();
+       // try{fileModulePage.notEnoughSpacePopup.isDisplayed()
+
+         try {fileModulePage.conflictWarning.isDisplayed();
+
+             for (WebElement checkbox : fileModulePage.conflictCheckboxes) {
+                 checkbox.click();
+                 BrowserUtils.sleep(2);
+             }
+             BrowserUtils.sleep(2);
+             fileModulePage.conflictBtn.click();
+             BrowserUtils.sleep(2);
             } catch (NoSuchElementException e) {
-                for (WebElement checkbox : fileModulePage.conflictCheckboxes) {
-                    checkbox.click();
-                    BrowserUtils.sleep(2);
-                }
-                BrowserUtils.sleep(2);
-                fileModulePage.conflictBtn.click();
-                BrowserUtils.sleep(2);
-
+                System.out.println("No duplicated file");
             }
-            System.out.println("No duplicated file");
-            }
-
+        }
 
         @Then("the user should be able to see storage usage is increased")
         public void the_user_should_be_able_to_see_storage_usage_is_increased () {
