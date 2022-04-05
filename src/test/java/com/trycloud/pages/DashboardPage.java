@@ -22,9 +22,23 @@ public class DashboardPage {
     @FindBy (xpath = "//*[@id=\"appmenu\"]/li[2]")
     public WebElement fileModule;
 
+
+    @FindBy(xpath = "//span[@class='material-design-icon magnify-icon unified-search__trigger']")
+    public WebElement magnifierIconBttn;
+
+    @FindBy (xpath ="//input[@class='unified-search__form-input']")
+    public WebElement searchBox;
+
+    @FindBy (xpath ="//h3[@class='unified-search__result-line-one']")
+    public WebElement searchInputResult;
+
     public String dashboardPageTitle(){
         return Driver.getDriver().getTitle();
     }
+
+
+
+
 
 
 }
