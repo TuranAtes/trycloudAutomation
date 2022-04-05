@@ -41,10 +41,10 @@ public class US10_StepDefinitions {
             fileModulePage.settingsCheckboxesName.get(i).click();
             Assert.assertTrue("Checkbox is selected after clicking", fileModulePage.settingsCheckboxes.get(i).isSelected());
         }
-       for (WebElement each : fileModulePage.settingsCheckboxes) {
+        for (WebElement each : fileModulePage.settingsCheckboxes) {
             Assert.assertTrue(each.isEnabled());
         }
-
+    }
         @When("user checks the current storage usage")
         public void user_checks_the_current_storage_usage () {
            String storageBeforeUploading= fileModulePage.storageUsage.getText();
