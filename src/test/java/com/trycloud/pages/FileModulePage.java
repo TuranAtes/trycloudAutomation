@@ -158,7 +158,26 @@ public class FileModulePage {
     public WebElement mertfirst3dots;
 
 
+    @FindBy(css = ".settings-button")
+    public WebElement settingsBtn;
 
+    @FindBy(xpath ="//div[@id='app-settings-content']//label")
+    public List<WebElement> settingsCheckboxesName;
+
+    @FindBy(xpath ="//div[@id='app-settings-content']//input[@type='checkbox']")
+    public List<WebElement> settingsCheckboxes;
+
+    @FindBy(xpath ="//a[@class='icon-quota svg']//p")
+    public WebElement storageUsage;
+
+    @FindBy(css ="#oc-dialog-fileexists-content")
+    public WebElement conflictWarning;
+
+    @FindBy(xpath ="//div[@class='conflict']//label")
+    public List<WebElement> conflictCheckboxes;
+
+    @FindBy(xpath ="//button[.='Continue']")
+    public WebElement conflictBtn;
 
 
 
