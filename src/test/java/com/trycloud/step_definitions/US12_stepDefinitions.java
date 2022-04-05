@@ -22,7 +22,7 @@ public class US12_stepDefinitions{
     @Then("verify the page title is the {string}")
     public void verifyThePageTitleIsThe(String arg0) {
 
-       Assert.assertTrue(Driver.getDriver().getTitle().contains("Contacts - Trycloud"));
+       Assert.assertTrue(Driver.getDriver().getTitle().contains("Trycloud"));
 
     }
     }
