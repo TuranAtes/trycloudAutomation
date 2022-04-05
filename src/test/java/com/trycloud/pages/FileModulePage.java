@@ -1,6 +1,8 @@
 package com.trycloud.pages;
 
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -99,6 +101,72 @@ public class FileModulePage {
 
     @FindBy(xpath = "(//div[@class='message'])[2]")
     public WebElement commentVerify;
+
+
+
+/*    @FindBy(xpath = "//tr//span[@class='innernametext']/..")
+    public List<WebElement> AllDeletedFolderElement;
+
+    @FindBy(xpath = "//tr[1]//span[@class='innernametext']")
+    public WebElement locationofthreedat;
+
+
+    @FindBy(xpath = "//a[.='Deleted files']")
+    public WebElement deletedmodule;
+    @FindBy(xpath = "//span[.='Delete folder']")
+    public WebElement deletedddfolder;
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
+    public WebElement actionbutton1;
+
+    @FindBy(xpath = "(//span[.=' Restore']/..)[204]")
+    public List<WebElement> restoreButton;
+
+    @FindBy(xpath = "(//span[.='JamesBond'])[4]")
+    public List<WebElement> jamesbond;
+
+
+    @FindBy(xpath = "(//span[.='Master of Engineering'])[2]")
+    public WebElement Masterofengineer;
+
+
+
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
+    public WebElement actionmy;*/
+
+
+    @FindBy(xpath = "//tr[1]//span[@class='innernametext']")
+    public WebElement mertchosenFolderForDelete;
+
+    public void mertactionIconSubOptionsNavigate(String optionName){
+        String optionLocator="//span[.='"+optionName+"']/..";
+        BrowserUtils.waitForVisibility(Driver.getDriver().findElement(By.xpath(optionLocator)),5);
+        BrowserUtils.highlight(Driver.getDriver().findElement(By.xpath(optionLocator)));
+        Driver.getDriver().findElement(By.xpath(optionLocator)).click();
+    }
+
+    @FindBy(xpath = "//a[.='Deleted files']")
+    public WebElement mertdeletedFilesModule;
+    @FindBy(xpath = "//tr//span[@class='innernametext']/..")
+    public List<WebElement> mertdeletedFilesFoldersList;
+
+    @FindBy(xpath = "//span[.=' Restore']/..")
+    public List<WebElement> mertrestoreBtn;
+
+
+    @FindBy(xpath = "//a[@data-action='menu']//span/..")
+    public WebElement mertfirst3dots;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

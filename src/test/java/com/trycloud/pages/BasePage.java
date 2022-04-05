@@ -33,4 +33,7 @@ public class BasePage {
         BrowserUtils.highlight(eachModule);
         eachModule.click();
     }
+
+
+
 }
