@@ -10,7 +10,7 @@ Feature:  As a user, I should be able to search any item/ users from the homepag
     Examples:
       | searchValue | expectedValue |
       | User71      | User71        |
-      | yoda1       | yoda1         |
+      | Readme      | Readme        |
       | Talk        | Talk          |
 
 
