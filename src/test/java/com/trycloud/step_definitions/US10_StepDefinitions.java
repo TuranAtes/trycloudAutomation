@@ -70,19 +70,19 @@ public class US10_StepDefinitions {
             try {
                 fileModulePage.conflictWarning.isDisplayed();
             } catch (NoSuchElementException e) {
-                System.out.println("No duplicated file");
-
-            }
-
-            for (WebElement checkbox : fileModulePage.conflictCheckboxes) {
-                checkbox.click();
+                for (WebElement checkbox : fileModulePage.conflictCheckboxes) {
+                    checkbox.click();
+                    BrowserUtils.sleep(2);
+                }
                 BrowserUtils.sleep(2);
-            }
-            BrowserUtils.sleep(2);
-            fileModulePage.conflictBtn.click();
-            BrowserUtils.sleep(2);
+                fileModulePage.conflictBtn.click();
+                BrowserUtils.sleep(2);
 
-        }
+            }
+            System.out.println("No duplicated file");
+            }
+
+
         @Then("the user should be able to see storage usage is increased")
         public void the_user_should_be_able_to_see_storage_usage_is_increased () {
             Driver.getDriver().navigate().refresh();
