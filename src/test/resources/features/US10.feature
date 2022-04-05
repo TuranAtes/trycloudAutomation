@@ -1,0 +1,17 @@
+Feature: As a user, I should be able to update settings.
+
+Background:
+  Given user on the dashboard page
+  And the user clicks the "Files" module
+  @ira
+Scenario: Verify users update settings
+
+When user clicks Settings on the left bottom corner
+Then the user should be able to click any buttons
+
+Scenario: Verify users to see the app storage usage
+
+When user checks the current storage usage
+And users uploads file with the “upload file” option
+And user refresh the page
+Then the user should be able to see storage usage is increased
