@@ -1,6 +1,7 @@
 package com.trycloud.step_definitions;
 
 import com.trycloud.pages.ContactPage;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,8 +11,10 @@ public class US12_stepDefinitions{
 
    ContactPage contactPage = new ContactPage();
 
+
     @When("the user clicks the Contacts module")
     public void theUserClicksTheContactsModule() {
+        BrowserUtils.sleep(3);
         contactPage.contactModule.click();
     }
 
