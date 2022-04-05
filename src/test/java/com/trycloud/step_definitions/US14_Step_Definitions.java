@@ -1,5 +1,6 @@
 package com.trycloud.step_definitions;
 
+import com.trycloud.pages.BasePage;
 import com.trycloud.pages.DashboardPage;
 import com.trycloud.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
@@ -8,17 +9,18 @@ import org.junit.Assert;
 
 public class US14_Step_Definitions {
     DashboardPage dashboardPage=new DashboardPage();
+    BasePage basePage= new BasePage();
 
     @When("the user clicks the magnifier icon on the right top")
     public void the_user_clicks_the_magnifier_icon_on_the_right_top() {
-        dashboardPage.magnifierIconBttn.click();
+        basePage.searchIcon.click();
         BrowserUtils.waitFor(3);
 
     }
     @When("users search any existing {string} file,folder,user name")
     public void users_search_any_existing_file_folder_user_name(String actual) {
 
-        dashboardPage.searchBox.sendKeys(actual);
+        basePage.searchInput.sendKeys(actual);
 
 
     }
