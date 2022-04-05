@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class US14_Step_Definitions {
-    DashboardPage dashboardPage=new DashboardPage();
+
     BasePage basePage= new BasePage();
 
     @When("the user clicks the magnifier icon on the right top")
@@ -28,7 +28,7 @@ public class US14_Step_Definitions {
     public void verify_the_app_displays_the_result_option(String expected) {
 
 
-        String actual = dashboardPage.searchInputResult.getAttribute("title");
+        String actual = basePage.searchInputResult.getAttribute("title");
         Assert.assertTrue(actual.contains(expected));
         System.out.println(actual);
 
