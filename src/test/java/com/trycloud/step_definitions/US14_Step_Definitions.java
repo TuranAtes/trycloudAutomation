@@ -28,7 +28,7 @@ public class US14_Step_Definitions {
     public void verify_the_app_displays_the_result_option(String expected) {
 
 
-        String actual = basePage.searchInputResult.getAttribute("title");
+        String actual = basePage.firstSearchedResult.getAttribute("title");
         Assert.assertTrue(actual.contains(expected));
         System.out.println(actual);
 
